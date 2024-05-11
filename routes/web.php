@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('404');
 });
+
+Route::get("/dashboard", "PageController@dashboard");
+Route::get("/links", "PageController@links");
