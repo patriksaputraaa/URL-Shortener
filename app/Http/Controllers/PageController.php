@@ -13,4 +13,12 @@ class PageController extends Controller
     public function links(){
         return view("links", ["key" => "links"]);
     }
+
+    public function homepage(){
+        return view("homepage", ["key" => "homepage"]);
+    }
+
+    public function books(){
+        return view("books");
+    }
 }

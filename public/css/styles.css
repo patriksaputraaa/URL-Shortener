@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.full-height-container {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+.left-section, .right-section {
+    height: 100%;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+header{
+    background-color: #045c34;
+}
+
+html,
+body,
+.container-fluid {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.aside-bg {
+    background-color: #00a54f;
+    height: 100%;
+}
+
+.content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.full-height-container {
+    display: flex;
+    height: 100vh;
+}
+
+.navbar{
+    min-height: 70px;
+}

@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('404');
-});
+Route::get('/', "PageController@homepage");
 
 Route::get("/dashboard", "PageController@dashboard");
 Route::get("/links", "PageController@links");
+
+Route::get("/books", "PageController@books");
