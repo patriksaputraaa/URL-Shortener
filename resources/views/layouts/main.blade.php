@@ -29,20 +29,7 @@
                 </div>
                 <hr>
             </div>
-            <div class="row side-navbar">
-                <div class="col-lg-2 h-100">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a target="_self" class="nav-link {{ $key == 'dashboard' ? 'active' : '' }}"
-                            id="v-pills-home-tab" role="tab" href="/dashboard">Dashboard</a>
-                        <a target="_self" class="nav-link {{ $key == 'links' ? 'active' : '' }}" role="tab"
-                            href="/links">Links</a>
-                        <a target="_self" class="nav-link {{ $key == 'analytics' ? 'active' : '' }} "
-                            id="v-pills-messages-tab" role="tab" href="/analytics">Analytics</a>
-                        <a target="_self" class="nav-link {{ $key == 'settings' ? 'active' : '' }}"
-                            id="v-pills-settings-tab" role="tab" href="/settings">Settings</a>
-                    </div>
-                </div>
-            </div>
+            @include('layouts.sidenavs')
             <div class="row side-footer">
                 <p>Template by Patrik - 2024</p>
             </div>
@@ -52,9 +39,9 @@
         <div class="col-lg-10 right-section bg-light">
             <header class="row head-section align-items-center justify-content-center">
                 <div class="col-lg-2 nav align-items-center">
-                    <ul class="nav justify-content-end ml-auto">
+                    <ul class="nav justify-content-lg-left">
                         <li class="nav-item">
-                            <h3 class="nav-link active" href="#">Dashboard</h3>
+                            <h3 class="nav-link active" href="#">{{$key}}</h3>
                         </li>
                     </ul>
                 </div>
@@ -67,8 +54,7 @@
                             <a class="nav-link" href="#">Upgrade</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Night
-                                Mode</a>
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Night Mode</a>
                         </li>
                     </ul>
                 </div>
@@ -91,5 +77,3 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-
-</html>

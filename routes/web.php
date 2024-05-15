@@ -15,5 +15,7 @@ Route::get('/', "PageController@homepage");
 
 Route::get("/dashboard", "PageController@dashboard");
 Route::get("/links", "PageController@links");
+Route::get("/analytics", "PageController@analytics");
+Route::get("/settings", "PageController@settings");
 
 Route::get("/books", "PageController@books");
