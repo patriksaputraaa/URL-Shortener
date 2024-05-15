@@ -1,50 +1,101 @@
-html, body {
-    height: 100%;
+html,
+body {
+    height: 100vh;
     margin: 0;
+    color: white;
 }
 
 .full-height-container {
     display: flex;
     height: 100vh;
-    margin: 0;
+    margin: auto;
+    overflow: hidden;
 }
 
-.left-section, .right-section {
-    height: 100%;
+.left-section{
+    position: sticky;
+}
+.left-section,
+.right-section {
+    height: 100vh;
+    background-color: #00a54f;
 }
 
 body {
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 100vh;
+    min-height: 100vh;
 }
 
-header{
+header {
     background-color: #045c34;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+hr{
+    display: block;
+    height: 1px;
+    width: 100%; /* Set the width to 100% */
+    border: 0;
+    border-top: 1px solid #ccc;
+    border-style: solid;
+    margin: 1em 0;
+    padding: 0;
+}
+
+a{
+    color: white;
+}
+
+h3{
+    padding: 0px;
 }
 
 html,
 body,
 .container-fluid {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
 
-.aside-bg {
-    background-color: #00a54f;
-    height: 100%;
+.side-navbar {
+    height: 50%;
+}
+
+.side-logo {
+    padding: 20px;
 }
 
 .content {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
+    color: black;
 }
 
-.full-height-container {
-    display: flex;
-    height: 100vh;
-}
-
-.navbar{
+.navbar {
     min-height: 70px;
+}
+
+.side-user{
+    padding-left: 20px;
+}
+
+.side-user p{
+    font-size: smaller;
+    margin-bottom: 2px;
+}
+
+.side-profile{
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+
+.side-footer {
+    margin-top: auto;
+    margin-left: 2px;
+}
+
+.card a{
+    color: black;
 }
