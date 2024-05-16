@@ -1,19 +1,23 @@
 html,
 body {
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
     color: white;
+    overflow: hidden;
 }
 
 .full-height-container {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
     margin: auto;
-    overflow: hidden;
 }
 
 .left-section{
     position: sticky;
+}
+
+.right-section{
+    overflow: auto;
 }
 .left-section,
 .right-section {
@@ -96,6 +100,15 @@ body,
     margin-left: 2px;
 }
 
+.card{
+    margin:5px;
+}
+
 .card a{
     color: black;
+}
+
+#long-url-text{
+    width: 88%;
+    min-height: 36px;
 }
