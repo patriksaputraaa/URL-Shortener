@@ -10,11 +10,16 @@
                 @csrf
                 <div class="form-group">
                     <label>Short URL</label>
-                    <input type="text" name="short_url" class="form-control" required>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">duwa.id/</span>
+                        </div>
+                        <input type="text" name="short_url" class="form-control" required placeholder="Masukkan URL pendekmu" aria-describedby="basic-addon3">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Long URL</label>
-                    <input type="text" name="long_url" class="form-control" required>
+                    <input type="text" name="longUrl" class="form-control" value="{{ $longUrl }}" required placeholder="Masukkan URL panjangmu" id="long-url-text">
                 </div>
                 <div class="form-group">
                     <select name="test" id="" class="form-control">

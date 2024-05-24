@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +12,19 @@
 |
 */
 
-Route::get('/', "PageController@homepage");
+Route::get('/', "SessionController@homepage");
+Route::post('/login', "SessionController@login");
+Route::get('/logout', "SessionController@logout");
+
+Route::get('/register', "SessionController@register");
+Route::post('/create', "SessionController@create");
 
 Route::get("/dashboard", "PageController@dashboard");
 Route::get("/links", "PageController@links");
+Route::post("/links/add-link", "PageController@addLink");
 Route::get("/analytics", "PageController@analytics");
 Route::get("/settings", "PageController@settings");
+
 
 Route::get("/links/add-link", "PageController@addLink");
 Route::post("links/saveLink", "PageController@saveLink");

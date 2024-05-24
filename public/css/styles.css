@@ -112,3 +112,23 @@ body,
     width: 88%;
     min-height: 36px;
 }
+
+.user-avatar{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.sub-header{
+    background-color: #00a54f;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+h5{
+    margin: 0px;
+}
+

@@ -31,8 +31,9 @@
                     <h3>DuWa Shortener</h3>
                 </div>
                 <div class="side-user">
-                    <h5>Patrik Kurniawan Saputra</h5>
-                    <p>72220533 - Premium User</p>
+                    <img src="{{ asset('images/' . Auth::user()->avatar) }}" alt="Avatar" class="user-avatar">
+                    <h5>{{ Auth::user()->username }}</h5>
+                    <p>{{ Auth::user()->email }}</p>
                 </div>
                 <hr>
             </div>
@@ -48,7 +49,7 @@
                 <div class="col-lg-2 nav align-items-center">
                     <ul class="nav justify-content-lg-left">
                         <li class="nav-item">
-                            <h3 class="nav-link active" href="#">{{ $key }}</h3>
+                            <h3 class="nav-link active" href="#">{{ strtoupper($key) }}</h3>
                         </li>
                     </ul>
                 </div>
@@ -61,8 +62,11 @@
                             <a class="nav-link" href="#">Upgrade</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Night
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Night
                                 Mode</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout" tabindex="-1">Log Out</a>
                         </li>
                     </ul>
                 </div>

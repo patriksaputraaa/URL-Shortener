@@ -3,17 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+class User extends Authenticatable
 {
     protected $table = 'users';
 
     protected $fillable = [
-        'username', 'password', 'email', 'last_login'
+        'username', 'avatar', 'password', 'email', 'last_login'
     ];
 
     protected $casts = [
         'last_login' => 'date'
+    ];
+
+    protected $attributes = [
+        'avatar' => 'avatar.jpg'
     ];
 
     public function links(){

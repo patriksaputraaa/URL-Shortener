@@ -12,7 +12,9 @@ class PageController extends Controller
     }
 
     public function links(){
+        // $links = Link::all();
         $links = Link::orderBy('created_at', 'desc')->get();
+        // dd($links);
         return view("links", ["key" => "Links", "links" => $links]);
     }
 
@@ -22,21 +24,19 @@ class PageController extends Controller
     }
 
     public function saveLink(Request $request){
-        // $filename = time().'-'.$request->file('gambar')->getClientOriginalName();
-        // $path = $request->file('gambar')->storeAs('images', $filename, 'public');
-        // 'gambar' => $path;
         Link::create([
-            'short_url' => $request->short_url,
-            'long_url' => $request->long_url,
-            'expires_at' => now(),
-            'user_id' => 1,
+            'short_url' => 'duwa.id/' . $request->short_url,
+            'long_url' => $request->longUrl,
+            'expires_at' => now()->addDays(30),
+            'user_id' => auth()->id(),
         ]);
 
         return redirect('/links')->with('alert', 'Data berhasil disimpan');
     }
 
     public function addLink(){
-        return view("addLink", ["key"  => "link"]);
+        $longUrl = request('long_url');
+        return view("addLink", ["key"  => "link", "longUrl" => $longUrl]);
     }
 
     public function homepage(){
@@ -51,8 +51,11 @@ class PageController extends Controller
         return view("settings", ["key" => "Settings"]);
     }
 
-
     public function books(){
         return view("books");
+    }
+
+    public function login(){
+        return view("login", ["key" => "Login"]);
     }
 }

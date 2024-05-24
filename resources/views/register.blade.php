@@ -45,13 +45,6 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1>Selamat Datang di DuWa Shortener</h1>
-                            <p>Selamat datang di DuWa Shortener, situs web yang berusaha untuk menyediakan layanan
-                                pengkortasan URL yang efisien.</p>
-                        </div>
-                    </div>
                     <div class="card mt-4">
                         @if ($errors->any())
                             <div style="color: red;">
@@ -59,11 +52,15 @@
                             </div>
                         @endif
                         <div class="card-header">
-                            <h4>Masuk ke Akun Anda</h4>
+                            <h4>Buat Akun Anda</h4>
                         </div>
                         <div class="card-body">
-                            <form action="/login" method="post">
+                            <form action="/create" method="post">
                                 @csrf
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" value="{{ Session::get('username') }}" class="form-control" id="username" name="username" required>
+                                </div>
                                 <div class="form-group">
                                     <label for="email">Email:</label>
                                     <input type="email" value="{{ Session::get('email') }}" class="form-control" id="email" name="email" required>
@@ -72,11 +69,8 @@
                                     <label for="password">Password:</label>
                                     <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary d-grid">Masuk</button>
+                                <button type="submit" class="btn btn-primary d-grid">Daftar</button>
                             </form>
-                        </div>
-                        <div class="card-footer text-muted">
-                            Belum punya akun? <a href="#">Daftar sekarang</a>
                         </div>
                     </div>
                 </div>

@@ -2,8 +2,11 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <input type="text" name="long-url" id="long-url-text">
-            <a href="/links/add-link"><i class="bi bi-plus-square-fill"> Short it!</i></a>
+            <form action="/links/add-link" method="post">
+                @csrf
+                <input type="text" name="long_url" id="long-url-text">
+                <button type="submit"><i class="bi bi-plus-square-fill"> Short it!</i></button>
+            </form>
         </div>
     </div>
     @if (@session('alert'))
@@ -31,7 +34,7 @@
                         <tr>
                             <td>{{ $idx + 1 }}</td>
                             <td>{{ $link->long_url }}</td>
-                            <td>{{ $link->short_url }}</td>
+                            <td>{{ $link->short_url ? $link->short_url : 'Tidak tersedia' }}</td>
                             <td>{{ $link->created_at }}</td>
                             <td>{{ $link->expires_at }}</td>
                         </tr>
