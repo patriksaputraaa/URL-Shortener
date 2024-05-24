@@ -12,9 +12,8 @@ class PageController extends Controller
     }
 
     public function links(){
-        // $links = Link::all();
-        $links = Link::orderBy('created_at', 'desc')->get();
-        // dd($links);
+        $id = auth()->id();
+        $links = Link::where('user_id', $id)->orderBy('created_at', 'desc')->get();
         return view("links", ["key" => "Links", "links" => $links]);
     }
 

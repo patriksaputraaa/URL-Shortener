@@ -22,16 +22,6 @@
                     <input type="text" name="longUrl" class="form-control" value="{{ $longUrl }}" required placeholder="Masukkan URL panjangmu" id="long-url-text">
                 </div>
                 <div class="form-group">
-                    <select name="test" id="" class="form-control">
-                        <option value="0">>--Pilih Genre--<</option>
-                        <option value="Action">Action</option>
-                        <option value="Comedy">Comedy</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="file" name="gambar" class="form-control-file" accept="image/*">
-                </div>
-                <div class="form-group">
                     <button type="submit" class="btn btn-primary">SIMPAN</button>
                 </div>
             </form>

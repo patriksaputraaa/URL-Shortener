@@ -73,6 +73,7 @@
                                     <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary d-grid">Masuk</button>
+                                <span class="float-right">Belum punya akun?<a href="/register" class="btn btn-info d-grid">Daftar</a></span>
                             </form>
                         </div>
                         <div class="card-footer text-muted">
