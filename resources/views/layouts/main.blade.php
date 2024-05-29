@@ -56,14 +56,24 @@
                 <div class="col-lg-10 navbar">
                     <ul class="nav justify-content-end ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Notification</a>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-bell-fill"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <button class="dropdown-item" type="button">Action</button>
+                                  <button class="dropdown-item" type="button">Another action</button>
+                                  <button class="dropdown-item" type="button">Something else here</button>
+                                </div>
+                              </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Upgrade</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Night
-                                Mode</a>
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </button>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/logout" tabindex="-1">Log Out</a>

@@ -30,4 +30,6 @@ Route::get("/links/add-link", "PageController@addLink");
 Route::post("links/saveLink", "PageController@saveLink");
 Route::get("/getlink", "PageController@getLinks");
 
-Route::get("/books", "PageController@books");
+Route::get("/links/edit/{short_url}", "PageController@editLink");
+Route::get("/links/delete/{short_url}", "PageController@deleteLink");
+Route::put("/links/update/{short_url}", "PageController@updateLink");

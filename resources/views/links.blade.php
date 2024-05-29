@@ -11,7 +11,7 @@
     </div>
     @if (@session('alert'))
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Data berhasil disimpan!</strong>
+            <strong>{{ session('alert') }}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -26,7 +26,7 @@
                         <th>Long URL</th>
                         <th>Short URL</th>
                         <th>Created at</th>
-                        <th>Expires at</th>
+                        <th style="width: 120px;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,9 +34,12 @@
                         <tr>
                             <td>{{ $idx + 1 }}</td>
                             <td>{{ $link->long_url }}</td>
-                            <td>{{ $link->short_url ? $link->short_url : 'Tidak tersedia' }}</td>
+                            <td>duwa.id/{{ $link->short_url ? $link->short_url : 'Tidak tersedia' }}</td>
                             <td>{{ $link->created_at }}</td>
-                            <td>{{ $link->expires_at }}</td>
+                            <td>
+                                <a href="/links/edit/{{ $link->short_url }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/links/delete/{{ $link->short_url }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

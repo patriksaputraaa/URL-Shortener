@@ -66,6 +66,9 @@ body,
 
 .side-navbar {
     height: 50%;
+    margin-top: -10px;
+    margin-left: -20px;
+    margin-bottom: -20px;
 }
 
 .side-logo {
