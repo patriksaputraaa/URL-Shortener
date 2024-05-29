@@ -48,13 +48,6 @@ class PageController extends Controller
         $link = Link::find($short_url);
         $link->short_url = $request->short_url;
         $link->long_url = $request->long_url;
-        // if($request->avatar){
-        //     if($link->avatar){
-        //         Storage::delete($link->avatar);
-        //     }
-        //     $file_name = $request->file('avatar')->store('avatars');
-        //     $link->avatar = $file_name;
-        // }
         $link->save();
         return redirect('/links')->with('alert', 'Data berhasil diubah');
     }

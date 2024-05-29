@@ -135,3 +135,9 @@ h5{
     margin: 0px;
 }
 
+#upload_link{
+    text-decoration:none;
+}
+#upload{
+    display:none
+}

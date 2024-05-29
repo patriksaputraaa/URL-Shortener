@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="/links/add-link" method="post">
+            <form action="/links/add-link" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="text" name="long_url" id="long-url-text">
                 <button type="submit"><i class="bi bi-plus-square-fill"> Short it!</i></button>

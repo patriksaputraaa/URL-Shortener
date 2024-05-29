@@ -15,9 +15,10 @@ use App\Http\Controllers\SessionController;
 Route::get('/', "SessionController@homepage");
 Route::post('/login', "SessionController@login");
 Route::get('/logout', "SessionController@logout");
-
 Route::get('/register', "SessionController@register");
 Route::post('/create', "SessionController@create");
+
+Route::post('/edit-profile', "UserController@editProfile");
 
 Route::get("/dashboard", "PageController@dashboard");
 Route::get("/links", "PageController@links");
