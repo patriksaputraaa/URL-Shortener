@@ -9,19 +9,39 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function editProfile(Request $request){
+    public function editProfile(){
+        return view('settings');
+    }
+
+    public function updateProfile(Request $request){
         $user = User::find(Auth::user()->id);
-        if($request->hasFile('avatar')){
-            if($user->avatar){
-                Storage::delete($user->avatar);
-            }
-            $file_name = $request->file('avatar')->store('avatars');
-            $user->avatar = $file_name;
-        }
         $user->username = $request->username;
         $user->email = $request->email;
+        if($request->avatar){
+            if($user->avatar){
+                Storage::disk('public')->delete($user->avatar);
+            }
+            $file_name = Auth::user()->id . '-' . $request->file('avatar')->getClientOriginalName();
+            $request->file('avatar')->storeAs('avatars', $file_name, 'public');
+            $user->avatar = $file_name;
+        }
         $user->save();
         return redirect('/settings')->with('alert', 'Data berhasil diubah');
     }
 
+    public function changePassword(){
+        return view('editPassword', ["key" => ""]);
+    }
+
+    public function updatePassword(Request $request){
+        $user = User::find(Auth::user()->id);
+        if($request->newpassword != $request->confirmpassword){
+            return redirect('/settings')->with('alert', 'Password tidak cocok');
+        }else{
+            $user->password = bcrypt($request->newpassword);
+            // dd($user);
+            $user->save();
+            return redirect('/settings')->with('alert', 'Password berhasil diubah');
+        }
+    }
 }

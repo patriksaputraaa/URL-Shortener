@@ -1,11 +1,9 @@
 @extends('layouts.main')
-
 @section('title', 'Edit Link')
 @section('content')
     <div class="card">
         <div class="card-header">Edit your link here:</div>
         <div class="card-body">
-            {{-- enctype="multipart/form-data"--> untuk form jika ada gambar biar support --}}
             <form action="/links/update/{{ $link->short_url }}" method="post">
                 @csrf
                 @method('PUT')

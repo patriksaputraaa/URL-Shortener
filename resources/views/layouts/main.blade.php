@@ -31,8 +31,8 @@
                     <h3>DuWa Shortener</h3>
                 </div>
                 <div class="side-user">
-                    <img src="{{ asset('images/' . Auth::user()->avatar) }}" alt="Avatar" class="user-avatar img-thumbnail">
-                    <h5>{{ Auth::user()->username }}</h5>
+                    <img src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}" alt="Avatar" class="user-avatar img-thumbnail">
+                    <h5>{{ Auth::user()->username}}</h5>
                     <p>{{ Auth::user()->email }}</p>
                 </div>
                 <hr>

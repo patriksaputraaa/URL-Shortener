@@ -44,6 +44,14 @@
     <main>
         <div class="container">
             <div class="row justify-content-center">
+                @if (@session('alert'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <strong>{{ session('alert') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
@@ -66,14 +74,16 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" value="{{ Session::get('email') }}" class="form-control" id="email" name="email" required>
+                                    <input type="email" value="{{ Session::get('email') }}" class="form-control"
+                                        id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password:</label>
                                     <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary d-grid">Masuk</button>
-                                <span class="float-right">Belum punya akun?<a href="/register" class="btn btn-info d-grid">Daftar</a></span>
+                                <span class="float-right">Belum punya akun?<a href="/register"
+                                        class="btn btn-info d-grid">Daftar</a></span>
                             </form>
                         </div>
                         <div class="card-footer text-muted">

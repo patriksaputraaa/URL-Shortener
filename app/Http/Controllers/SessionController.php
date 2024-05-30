@@ -47,7 +47,7 @@ class SessionController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate();
-        return redirect('/')->with('success', 'Berhasil Logout');
+        return redirect('/')->with('alert', 'Berhasil Logout');
     }
 
     public function register(Request $request)
