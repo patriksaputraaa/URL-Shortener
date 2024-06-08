@@ -59,11 +59,11 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="username">Username:</label>
-                                    <input type="text" value="{{ Session::get('username') }}" class="form-control" id="username" name="username" required>
+                                    <input type="text" class="form-control" id="username" name="username" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" value="{{ Session::get('email') }}" class="form-control" id="email" name="email" required>
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password:</label>

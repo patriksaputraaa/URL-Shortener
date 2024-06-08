@@ -36,7 +36,7 @@ class UserController extends Controller
     public function updatePassword(Request $request){
         $user = User::find(Auth::user()->id);
         if($request->newpassword != $request->confirmpassword){
-            return redirect('/settings')->with('alert', 'Password tidak cocok');
+            return redirect('/password')->with('alert', 'Password tidak cocok');
         }else{
             $user->password = bcrypt($request->newpassword);
             // dd($user);

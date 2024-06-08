@@ -49,7 +49,7 @@
                 <label for="email">Password </label>
                 <input type="password" name="password" value="{{ Auth::user()->password }}" class="form-control"
                     id="password" readonly>
-                <a href="/password" class="btn btn-primary d-grid mt-3">Ganti Password (soon)</a>
+                <a href="/password" class="btn btn-primary d-grid mt-3">Ganti Password</a>
                 <a href="/logout" class="btn btn-danger d-grid mt-3">Logout</a>
                 <button type="submit" class="btn btn-primary d-grid mt-3 float-right">Save</button>
             </form>

@@ -57,9 +57,6 @@ class SessionController extends Controller
 
     public function create(Request $request)
     {
-        Session::flash('email', $request->email);
-        Session::flash('username', $request->username);
-
         $request->validate([
             'username' => 'required',
             'email' => 'required|email|unique:users',
@@ -81,19 +78,6 @@ class SessionController extends Controller
         
         User::create($data);
 
-        $logininfo = [
-            'email' =>$request->email,
-            'password' =>$request->password,
-        ];
-
-        Log::info('Attempting login with:', $logininfo);
-        
-        if(Auth::attempt($logininfo)){
-            Log::info('Login successful for email: ' . $request->email);
-            return redirect('/dashboard')->with('success', Auth::user()->username . 'Berhasil Login ');
-        }else{
-            Log::error('Login failed for email: ' . $request->email);
-            return redirect('/')->withErrors('Email atau Password Salah');
-        }
+        return redirect('/')->with('alert', 'Berhasil Register, silahkan login');
     }
 }
