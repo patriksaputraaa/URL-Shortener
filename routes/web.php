@@ -12,10 +12,6 @@ use App\Http\Controllers\SessionController;
 |
 */
 
-
-
-
-
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/', "SessionController@homepage")->name('login');
     Route::post('/login', "SessionController@login");

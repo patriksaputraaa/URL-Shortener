@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Link;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 
 class APIController extends Controller
 {
